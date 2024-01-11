@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.FileUploaderComponent;
+import pages.components.ResultTableComponent;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -26,6 +27,7 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
     FileUploaderComponent fileUploaderComponent = new FileUploaderComponent();
+    ResultTableComponent resultTableComponent = new ResultTableComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
@@ -116,9 +118,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
+    public RegistrationPage checkResult(String field, String value) {
+        resultTableComponent.checkResultsTable(field, value);
 
         return this;
     }

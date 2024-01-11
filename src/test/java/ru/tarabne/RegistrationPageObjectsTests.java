@@ -3,7 +3,7 @@ package ru.tarabne;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-public class PracticeFormPageObjectsTests extends TestBase {
+public class RegistrationPageObjectsTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
@@ -35,8 +35,6 @@ public class PracticeFormPageObjectsTests extends TestBase {
                 .checkResult("Picture", "1.jpeg")
                 .checkResult("Address", "CurrentAddressValue")
                 .checkResult("State and City", "Rajasthan Jaipur");
-
-        //sleep(5000);
     }
 
     @Test
@@ -60,8 +58,6 @@ public class PracticeFormPageObjectsTests extends TestBase {
                 .checkResult("Address", "\t")
                 .checkResult("State and City", "\t")
                 .registrationSuccessCheck();
-
-        //sleep(5000);
     }
 
     @Test
